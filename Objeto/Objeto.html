@@ -1,31 +1,135 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>objeto</title>
-    
-  </head>
-  <body>
-    <h1>olá mundo</h1>
-    
-    <script type="text/javascript" charset="utf-8">
-      const carro = {
-        marca: "ford",
-        modelo: "ka",
-        ano: 2015,
-        cor: "vermelha",
-        buzina: function(){
-          alert("biiiiiiiiiii....")
-        },
-        completo: function(){
-          alert(`Marca: ${this.marca} cor: ${this.cor} buzina: ${this.buzina()}`)
-        }
-      }
+<html lang="pt">
+<head>
+   <meta charset="UTF-8">
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+   <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+   <title>Título da página</title>
+   <style>
       
-      carro.completo()
+      * {
+   margin: 0;
+   padding: 0;
+}
+
+.togle {
+   cursor: pointer;
+   display: none;
+}
+
+.b {
+   width: 30px;
+   height: 3px;
+   margin: 4px;
+   background: white;
+}
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: black;
+   padding: 20px;
+}
+ul {
+   display: flex;
+   list-style: none;
+}
+ul a {
+   padding: 10px;
+   color: white;
+   text-decoration: none;
+}
+h1 {
+   color: red;
+}
+.active {
+   transition: 3s ease-out;
+}
+.togle .c, .togle .e {
+   transition: all 0.3s;
+}
+
+@media (max-width: 900px){
+   
+   nav {
+      display: none;
+      
+   }
+   ul {
+      display: block;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: black;
+      width: 50vw;
+      height: 100vh;
+   }
+   .sd {
+      transition: all 0.5s;
+   }
+   .togle {
+      display: block;
+   }
+   
+   ul a {
+      display: block;
+      margin: 20px 0;
+   }
+}
       
       
-    </script>
-  </body>
+   </style>
+</head>
+<body>
+   <header>
+      <h1>Logo</h1>
+      <div class="togle">
+         <div class="b c"></div>
+         <div class="b d"></div>
+         <div class="b e"></div>
+      </div>
+      <nav class="ul">
+         <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Contato</a></li>
+            <li><a href="">Preços</a></li>
+         </ul>
+      </nav>
+   </header>
+   <script>
+      const togle = document.querySelector(".togle")
+
+const ul = document.querySelector(".ul")
+
+const c = document.querySelector(".c")
+const d = document.querySelector(".d")
+const e = document.querySelector(".e")
+
+togle.addEventListener("click", () => {
+   
+   if (ul.style.display === "none" || ul.style.display === "") {
+      ul.style.display = "block"
+      ul.classList.toggle("active")
+      ul.classList.toggle("sd")
+      togle.classList.toggle("c")
+      togle.classList.toggle("e")
+      d.style.display = "none"
+      c.style.background = "red"
+      e.style.background = "red"
+      c.style.transform = "rotate(40deg)"
+      e.style.transform = "rotate(-40deg)"
+      c.style.marginBottom = "-8px"
+   }else {
+      ul.style.display = "none"
+      c.style.background = "white"
+      e.style.background = "white"
+      c.style.transform = ""
+      e.style.transform = ""
+      c.style.marginBottom = ""
+      d.style.display = "block"
+   }
+   
+})
+   </script>
+</body>
 </html>
