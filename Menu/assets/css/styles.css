@@ -1,4 +1,8 @@
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -15,13 +19,15 @@
 .nav ul {
   list-style: none;
   display: flex;
+  max-width: 900px;
+  overflow: auto;
 }
 
 
 
 @media (max-width: 289px){
   
-  .header {
+  .nav {
     overflow: scroll;
   }
   
