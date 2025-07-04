@@ -2,6 +2,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: gray;
   color: white;
   padding: 10px;
@@ -9,7 +10,21 @@
 .nav a {
   color: white;
   text-decoration: none;
+  padding: 10px;
 }
 .nav ul {
   list-style: none;
+  display: flex;
+}
+
+
+
+@media (max-width: 289px){
+  
+  .header {
+    overflow: scroll;
+  }
+  
+  
+  
 }
